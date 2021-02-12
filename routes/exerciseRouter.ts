@@ -6,21 +6,18 @@ export const exerciseRouter = express.Router({
 });
 
 exerciseRouter.get("/", (req: Request, res: Response) => {
-  res.send("Hello from ExerciseRouter");
+  console.log(req.body);
   exerciseController.read(req, res);
 });
 
 exerciseRouter.post("/", (req: Request, res: Response) => {
-  res.send("Hello from ExerciseRouter");
   exerciseController.create(req, res);
 });
 
 exerciseRouter.patch("/", (req: Request, res: Response) => {
-  res.send("Hello from ExerciseRouter");
   exerciseController.update(req, res);
 });
 
 exerciseRouter.delete("/", (req: Request, res: Response) => {
-  res.send("Hello from ExerciseRouter");
   exerciseController.delete(req, res);
 });

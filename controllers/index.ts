@@ -1,4 +1,4 @@
-import { ExerciseController } from "./ExerciseController";
+import { ExerciseController } from "./exerciseController";
 
 const exerciseController = new ExerciseController();
 

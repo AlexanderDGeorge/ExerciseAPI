@@ -1,12 +1,10 @@
 import express from "express";
+import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import { exerciseRouter } from "./routes";
 const dotenv = require("dotenv");
 
 dotenv.config();
-const app = express();
-app.use(express.json());
-app.use("/exercises", exerciseRouter);
 
 try {
   mongoose.connect(
@@ -19,6 +17,11 @@ try {
 } catch (err) {
   console.error(err);
 }
+
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use("/exercises", exerciseRouter);
 
 app.listen(5000, () => {
   console.log("listening on port 5000");

@@ -1,3 +1,3 @@
-import { exerciseRouter } from "./exercise_routes";
+import { exerciseRouter } from "./exerciseRouter";
 
 export { exerciseRouter };
